@@ -1,0 +1,30 @@
+table{
+    width: 75%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  .mat-address{
+    border-left: 1px solid black;
+    min-height: 48px;
+  
+  }
+  .mat-column-weight{
+    border-left: 1px solid black;
+  
+     min-height: 48px;
+  }
+  
+  .mat-column-symbol{
+   border-left: 1px solid black;
+     min-height: 48px;
+  }

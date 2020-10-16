@@ -1,0 +1,114 @@
+  </head>
+  <body>
+    <input type="button" value="Add" onClick="addRow('dataTable')" />
+
+    <table id="dataTable" class="form" border="1">
+      <tbody>
+        <tr id="row_0">
+            <td>
+              <label>Quantity</label>
+              <input
+                type="number"
+                required="required"
+                name="qty"
+                oninput="calculate('row_0')"
+              />
+            </td>
+
+            <td>
+              <label for="sel">Price</label>
+              <select name="sel" id="sel" oninput="calculate('row_0')" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="29">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </td>
+            <td>
+              <label for="total">Total</label>
+              <input
+                type="text"
+                required="required"
+                class="small"
+                name="total"
+              />
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <label>Discount</label>
+              <input
+                id="discount"
+                type="number"
+                required="required"
+                name="discount"
+                oninput="calculateFinalAmount(this.value)"
+              />
+    </div>
+    <div>
+      <label>Final Total</label>
+              <input
+                id="finalTotal"
+                type="number"
+                required="required"
+                name="finalTotal"
+                readonly="true"
+
+              />
+    </div>
+         <label>less</label>
+              <input
+                id="amount"
+                type="number"
+                required="required"
+                name="amount"
+                readonly="true"
+              />
+    <div>
+      <tr>
+        <span>Sum</span>
+        <span id="totalOfTotals">0</span>
+      </tr>
+    </div>
+  </body>
+</html>
+      <!--<form (ngSubmit)="createOrUpdate()">
+        <h2><strong>Invoice</strong></h2>
+        
+
+
+
+           <input type="submit" value="Submit" class="btn btn-success">
+
+   
+
+
+
+  <router-outlet></router-outlet>
+
+
+
+
+
+  <!--<label for="id">Discount</label>
+  <input type="text" name="discount" [(ngModel)]="country.discount" class="form-control">
+ </div>
+
+ <div class="form-group">
+   <label for="name">FinalTotal</label>
+   <input type="text" name="finalTotal" [(ngModel)]="country.finalTotal" class="form-control">
+  </div>
+
+  <div class="form-group">
+   <label for="capital">Select</label>
+   <input type="text" name="selectt" [(ngModel)]="country.selectt" class="form-control">
+  </div> 
+
+
+<body class="container" > 
+
+  <div style="margin: 10px;">
+      <a href="/invoices/display"><button type="button" class="btn btn-success pull-right"> < Back to List</button></a></div>-->
+

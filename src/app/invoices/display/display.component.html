@@ -1,0 +1,26 @@
+<p>display works!</p>
+<div style="margin: 10px;">
+    <a href="/invoices/create"><button type="button" class="btn btn-success pull-right">+ Create New</button></a></div>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Countries and capital</h4>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Discount</th>
+                    <th>FinalTotal</th>
+                    <th>Selectt</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let country of countries">
+                    <td>{{country.discount}}</td>
+                    <td>{{country.finalTotal}}</td>
+                    <td>{{country.selectt}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>  
+
+<router-outlet></router-outlet>
