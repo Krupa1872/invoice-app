@@ -1,53 +1,80 @@
-  </head>
+<div class="container">
+<form (ngSubmit)="createOrUpdate()">
   <body>
-    <input type="button" value="Add" onClick="addRow('dataTable')" />
+    <label for="selectt"><b>Customer List</b></label>
+    <br/>
+               <select class="form-control" name="selectt" id="selectt"  required>
+                 <option value="" disabled selected>Select Customer</option>
+                 <option value="1">Mark Benson</option>
+                 <option value="2">Bob Smith</option>
+                 <option value="3">John Draper</option>
+                
+               </select>
+    <br/>
 
-    <table id="dataTable" class="form" border="1">
-      <tbody>
-        <tr id="row_0">
-            <td>
-              <label>Quantity</label>
-              <input
-                type="number"
-                required="required"
-                name="qty"
-                oninput="calculate('row_0')"
-              />
-            </td>
-
-            <td>
-              <label for="sel">Price</label>
-              <select name="sel" id="sel" oninput="calculate('row_0')" required>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="29">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </td>
-            <td>
-              <label for="total">Total</label>
-              <input
-                type="text"
-                required="required"
-                class="small"
-                name="total"
-              />
-            </td>
+    <table class="table">
+      <thead>
+        <tr>      
+          <th scope="col">Product</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
         </tr>
-      </tbody>
+      </thead>
     </table>
+        <table class="table" id="dataTable" class="form" size="3" >
+         
+          <tbody>
+            <tr id="row_0">
+    
+                <td>
+                  
+                  <select class="form-control" name="sel" id="sel" oninput="calculate('row_0')" style="border-color: gray;" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="29">Parachute Pants</option>
+                    <option value="2">Phone Holder</option>
+                    <option value="3">Pet Rock</option>
+                    <option value="4">Egg Timer</option>
+                    <option value="5">Neon Green Hat</option>
+                  </select>
+                </td>
+                 <td>
+                  
+                  <input border="0" style="border-color:gainsboro"
+                    type="number"
+                    required="required"
+                    name="qty"
+                    oninput="calculate('row_0')"
+                  />
+                </td>
+                <td>
+                  
+                  <input style="border-color:gainsboro"
+                    type="text"
+                    required="required"
+                    class="small"
+                    name="total"
+                  />
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+    <input type="button" value="Add" onClick="addRow('dataTable')" />
+  
+
+    
     <div>
-      <label>Discount</label>
+      <tr>
+      <td><label>Discount</label>
               <input
                 id="discount"
                 type="number"
                 required="required"
                 name="discount"
                 oninput="calculateFinalAmount(this.value)"
-              />
-    </div>
-    <div>
+                [(ngModel)]="country.discount"
+              /></td>
+      <td>
       <label>Final Total</label>
               <input
                 id="finalTotal"
@@ -55,25 +82,22 @@
                 required="required"
                 name="finalTotal"
                 readonly="true"
-
-              />
+                [(ngModel)]="country.finalTotal"
+                /></td>
     </div>
-         <label>less</label>
-              <input
-                id="amount"
-                type="number"
-                required="required"
-                name="amount"
-                readonly="true"
-              />
+        
     <div>
       <tr>
         <span>Sum</span>
         <span id="totalOfTotals">0</span>
       </tr>
     </div>
+    <input type="submit" value="Submit" class="btn btn-success">
   </body>
-</html>
+</form>
+<router-outlet></router-outlet>
+
+
       <!--<form (ngSubmit)="createOrUpdate()">
         <h2><strong>Invoice</strong></h2>
         
